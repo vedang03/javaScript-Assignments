@@ -11,7 +11,7 @@ let playTictacToe = (columnNumber, symbol) => {
     } else if(columnNumber>9) {
       console.log("Inavlid column number")
     }else{
-      console.log("place is occupied")
+      console.log("place is occupied.")
     }
     if (
       (board[0] == board[1] && board[1] == board[2] && board[1] != "z") ||
