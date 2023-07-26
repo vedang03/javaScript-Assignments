@@ -9,7 +9,7 @@ let addition = (...number) => {
             return functionGenerator('ansuk')
         }
     }
-    return sum
+    return ["addition: ",sum]
 }
 
 let subtraction = (...number) => {

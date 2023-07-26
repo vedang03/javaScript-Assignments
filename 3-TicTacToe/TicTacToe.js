@@ -14,14 +14,14 @@ let playTictacToe = (columnNumber, symbol) => {
       console.log("place is occupied.")
     }
     if (
-      (board[0] == board[1] && board[1] == board[2] && board[1] != "z") ||
-      (board[3] == board[4] && board[4] == board[5] && board[4] != "z") ||
-      (board[6] == board[7] && board[7] == board[8] && board[7] != "z") ||
-      (board[0] == board[1] && board[1] == board[2] && board[1] != "z") ||
-      (board[1] == board[4] && board[4] == board[7] && board[4] != "z") ||
-      (board[2] == board[5] && board[5] == board[8] && board[5] != "z") ||
-      (board[0] == board[4] && board[4] == board[8] && board[4] != "z") ||
-      (board[2] == board[4] && board[4] == board[6] && board[4] != "z")
+      (board[0] == board[1] && board[1] == board[2] && board[1] == symbol) ||
+      (board[3] == board[4] && board[4] == board[5] && board[4] == symbol) ||
+      (board[6] == board[7] && board[7] == board[8] && board[7] ==symbol) ||
+      (board[0] == board[1] && board[1] == board[2] && board[1] ==symbol) ||
+      (board[1] == board[4] && board[4] == board[7] && board[4] ==symbol) ||
+      (board[2] == board[5] && board[5] == board[8] && board[5] ==symbol) ||
+      (board[0] == board[4] && board[4] == board[8] && board[4] ==symbol) ||
+      (board[2] == board[4] && board[4] == board[6] && board[4] ==symbol)
     ) {
    
       console.log("Winner is: ", symbol);
