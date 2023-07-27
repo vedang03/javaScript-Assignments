@@ -51,7 +51,9 @@ switch(functionName){
     case "subtraction": return ["subraction:",subtraction]
     case "multiplication": return["multiplication",multiplication]
     case "division": return["division",division]
-    default : return "Operation not available"
+    default : return function   (){
+        "Invalid Operation"
+    }
    
 }
 }
