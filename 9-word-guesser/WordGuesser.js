@@ -1,4 +1,4 @@
-// program to generate random strings
+
 
 const result = Math.random().toString(36).substring(2,7);
 let numberOfTurns = 0
