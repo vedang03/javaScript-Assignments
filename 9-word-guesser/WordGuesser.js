@@ -1,6 +1,7 @@
 // program to generate random strings
 
 const result = Math.random().toString(36).substring(2,7);
+let numberOfTurns = 0
 
 let arr = ["0","0","0","0","0"]
 
@@ -12,13 +13,20 @@ let playWordGuesser = (letter) => {
             arr[i]=letter
             console.log(arr)
         }
+    }
         for(let i=0;i<arr.length;i++){
             if(!arr.includes("0")){
-                return 'You Wonn'
+                return 'You Won'
             }
         }
+        numberOfTurns++
+        if(numberOfTurns==10){
+            return 'Game Over'
+        }
         
-    }
+        
+    
 
 }
+
 

@@ -32,4 +32,3 @@ let playNumberGuesser = (number) => {
       }
   }
 };
-
