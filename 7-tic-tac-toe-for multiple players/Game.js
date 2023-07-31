@@ -35,7 +35,7 @@ class Game{
         } else{
             currentPlayer = this.players[1]
         }
-
+       
         let cellObj = this.board.getCellObj(cellNumber)
         currentPlayer.markCell(cellObj)
         this.turn++

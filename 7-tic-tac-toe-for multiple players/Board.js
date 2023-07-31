@@ -22,19 +22,41 @@ class Board{
    analyzeResults(){
     if(this.cells[0].mark==this.cells[1].mark &&
         this.cells[1].mark==this.cells[2].mark &&
-        this.cells[0].mark!='z'){
+        !this.cells[0].isMarked()){
             return [this.cells[0].mark,"winner"]
         }
         if(this.cells[3].mark==this.cells[4].mark &&
             this.cells[4].mark==this.cells[5].mark &&
-            this.cells[3].mark!='z'){
+            !this.cells[3].isMarked()){
                 return [this.cells[3].mark,"Winner"]
             }
-        if(this.cells[6].mark==this.cells[7] &&
-            this.cells[7]==this.cells[8] &&
-            this.cells[6].mark!='z'){
+        if(this.cells[6].mark==this.cells[7].mark &&
+            this.cells[7].mark==this.cells[8].mark &&
+            !this.cells[6].isMarked()){
                 return [this.cells[6].mark,"Winner"]
             }
+        if(this.cells[0].mark == this.cells[4].mark &&
+            this.cells[4].mark==this.cells[8].mark &&
+            !this.cells[0].isMarked()){
+                return [this.cells[0].mark,"Winner"]
+            }
+        if(this.cells[2].mark == this.cells[4].mark &&
+                this.cells[4].mark==this.cells[6].mark &&
+                !this.cells[2].isMarked()){
+                    return [this.cells[2].mark,"Winner"]
+                }
+        if( !this.cells[0].isMarked()&&
+        !this.cells[1].isMarked()&&
+        !this.cells[2].isMarked()&&
+        !this.cells[3].isMarked()&&
+        !this.cells[4].isMarked()&&
+        !this.cells[5].isMarked()&&
+        !this.cells[6].isMarked()&&
+        !this.cells[7].isMarked()&&
+        !this.cells[8].isMarked()){
+        return("","draw")
+        }
+            
      return ["",""]
    }
 }
