@@ -67,7 +67,7 @@ class Game{
             return this.board
         }
          if(symbolOfWinner ==this.players[1].symbol){
-            console.log( this.players[0].name + " is Winner")
+            console.log( this.players[1].name + " is Winner")
           this.isGameEnded=true
           if(this.isGameEnded){
            console.log("Game has ended")
