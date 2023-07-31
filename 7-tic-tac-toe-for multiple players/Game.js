@@ -1,11 +1,14 @@
 const Board = require("./Board")
 const Player = require("./Player")
+const Cell = require("./Cell")
+
 
 class Game{
     constructor(board , players){
          this.players = players
          this.board = board
          this.turn = 0
+         this.isGameEnded = false
     }
 
     static newGame(firstPlayerName , secondPlayerName){
@@ -16,6 +19,7 @@ class Game{
     }
 
     play(cellNumber){
+        this.isGameEnded=false
         //Validating input
         if(typeof cellNumber != 'number'){
             'Input should be a number'
@@ -49,26 +53,32 @@ class Game{
         if(gameStatus=="draw"){
             
             console.log('Game ended in a draw')
+            this.isGameEnded = true
             return this.board
+           
 
         }
         if(symbolOfWinner == this.players[0].symbol){
              console.log(this.players[0].name + " is winner")
+             this.isGameEnded = true
+             if(this.isGameEnded){
+                return 'Game has ended'
+            }
             return this.board
         }
-          console.log(this.players[0].name + " is Winner")
+         if(symbolOfWinner ==this.players[1].symbol){
+            console.log( this.players[1].name + " is Winner")
+          this.isGameEnded=true
+          if(this.isGameEnded){
+           console.log("Game has ended")
+        }
         return this.board
-
-
-
-
-
-
-        // if(this.isGameEnded()){
-        //     return 'Game has ended'
-        // }
-   
+       
     }
+
+
+    }
+    
 
 
 }
