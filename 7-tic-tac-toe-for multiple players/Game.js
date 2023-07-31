@@ -35,11 +35,12 @@ class Game{
         } else{
             currentPlayer = this.players[1]
         }
-       
+       //marking the cell with x or o based on currentplayer
         let cellObj = this.board.getCellObj(cellNumber)
         currentPlayer.markCell(cellObj)
         this.turn++
 
+        //createing a analyze result method to check all permutations
         let [symbolOfWinner,gameStatus]=this.board.analyzeResults()
         if(gameStatus==''){
             console.log("Continue")
