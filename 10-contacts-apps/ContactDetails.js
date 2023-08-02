@@ -1,7 +1,9 @@
 class ContactDetails {
+    static ID = 0
   constructor(typeOfContact, valueOfContact) {
     this.typeOfContact = typeOfContact;
     this.valueOfContact = valueOfContact;
+    this.contactDetailsID = ContactDetails.ID++
   }
   updateContactDetails(parameter, newValue) {
     switch (parameter) {

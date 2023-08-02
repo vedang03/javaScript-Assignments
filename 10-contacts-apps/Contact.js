@@ -14,10 +14,9 @@ class Contact {
       case "contactName":
         if (typeof newValue != "string") return "Contact name must be a string";
         this.contactName = newValue;
-        return this;
-
-      case "country":
-        if (typeof newValue != "string") return "Country name must be a string";
+       return this;
+     case "country":
+       if (typeof newValue != "string") return "Country name must be a string";
         this.country = newValue;
         return this;
 
@@ -32,20 +31,27 @@ class Contact {
     return contactDetail;
   }
   getContactDetails() {
-    this.contactDetails;
-    return this;
+    return this.contactDetails;
+    
   }
 
-  updateContactDetails(contactInfoID, parameter, newValue) {
-    return this.contactDetails[contactInfoID].updateContactDetails(
-      parameter,
-      newValue
-    );
-  }
+  updateContactDetails( parameter, newValue,contactInfoID) {
 
-  deleteContactDetails(indexOfContact) {
-    this.contactDetails.splice(indexOfContact);
+    for(let i=0;i<this.contactDetails.length;i++){
+        if(this.contactDetails[i].contactDetailsID==contactInfoID){
+    return this.contactDetails[i].updateContactDetails(
+                    parameter,
+                    newValue
+                  );
+    }
+    }
+    
+  }     
+
+  deleteContactDetails(indexOfContactDetails) {
+    this.contactDetails.splice(indexOfContactDetails,1);
   }
+ 
 }
 
 module.exports = Contact;

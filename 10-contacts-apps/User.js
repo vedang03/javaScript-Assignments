@@ -192,7 +192,7 @@ class User {
     return this.contacts[indexOfContact].getContactDetails();
   }
 
-  updateContactDetails(contactID, parameter, newValue) {
+  updateContactDetails(contactID, parameter, newValue,contactInfoID) {
     if (this.isAdmin) {
       return "Admin cannot update a contact";
     }
@@ -200,10 +200,10 @@ class User {
     if (!isContactExist) {
       return "Contact does not exist";
     }
-    return this.contacts.updateContact(parameter, newValue);
+    return this.contacts[indexOfContact].updateContactDetails(parameter, newValue,contactInfoID);
   }
 
-  deleteContactDetails(contactID) {
+  deleteContactDetails(contactID,contactInfoID) {
     if (this.isAdmin) {
       return "admin cannot delete a contact";
     }
@@ -211,8 +211,9 @@ class User {
     if (!isContactExist) {
       return "Contact does not exist";
     }
-    this.contacts[indexOfContact].deleteContactDetails(contactID);
+    this.contacts[indexOfContact].deleteContactDetails(contactInfoID);
   }
+
 }
 
 
