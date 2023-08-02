@@ -1,10 +1,17 @@
 class Cell{
     constructor(){
-        this.mark = 'z'
+        this.symbol = 'z'
     }
 
     isMarked(){
-        return this.mark == 'z'
+        return this.symbol == 'z'
+    }
+    reset(){
+        this.symbol = 'z'
+    }
+
+    getMark(){
+        this.symbol
     }
 }
 module.exports = Cell

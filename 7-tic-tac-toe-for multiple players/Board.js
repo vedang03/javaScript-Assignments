@@ -19,8 +19,11 @@ class Board{
     return this.cells[cellNumber]
 
    }
+   resetBoard(){
+    this.Cell.reset()
+   }
    analyzeResults(){
-    if(this.cells[0].mark==this.cells[1].mark &&
+    if(this.cells[0].getMark()==this.cells[1].mark &&
         this.cells[1].mark==this.cells[2].mark &&
         !this.cells[0].isMarked()){
             return [this.cells[0].mark,"winner"]
@@ -38,6 +41,7 @@ class Board{
         if(this.cells[0].mark == this.cells[4].mark &&
             this.cells[4].mark==this.cells[8].mark &&
             !this.cells[0].isMarked()){
+                
                 return [this.cells[0].mark,"Winner"]
             }
         if(this.cells[2].mark == this.cells[4].mark &&
